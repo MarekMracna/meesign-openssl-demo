@@ -1,0 +1,15 @@
+diff --git a/compose.deploy.yaml b/compose.deploy.yaml
+index d2b8b5d..231c94c 100644
+--- a/compose.deploy.yaml
++++ b/compose.deploy.yaml
+@@ -29,7 +29,9 @@ services:
+     #   context: .
+     #   dockerfile: Dockerfile
+     networks:
+-      - meesign-network
++      meesign-network:
++        aliases:
++          - meesign.local
+     ports:
+       - 1337:1337
+     restart: unless-stopped
